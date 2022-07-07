@@ -50,24 +50,24 @@ def getschool():
         print("poiuyt")
         ab = mycursor.fetchall()
         print(ab)
-        l = []
-        for i in ab:
-            dic = {}
-            #for j in i:
-            dic["firstname"] = i[0]
-            dic["lastname"] = i[1]
-            dic["reason"] = i[2]
-            dic["mobile"] = i[3]
-            dic["date"] = i[4]
-            ti = (datetime.min + i[5]).time()
-            json_str = json.dumps({'created_at': ti}, default=str)
-            dic["time"] = json_str
-            l.append(dic)
-        data_status["responseStatus"] = 1
-        data_status["details"] = l
-        data_status["results"] = "success"
-        #print(data_status)
-        return jsonify(l)
+        l = [1,2]
+#         for i in ab:
+#             dic = {}
+#             #for j in i:
+#             dic["firstname"] = i[0]
+#             dic["lastname"] = i[1]
+#             dic["reason"] = i[2]
+#             dic["mobile"] = i[3]
+#             dic["date"] = i[4]
+#             ti = (datetime.min + i[5]).time()
+#             json_str = json.dumps({'created_at': ti}, default=str)
+#             dic["time"] = json_str
+#             l.append(dic)
+#         data_status["responseStatus"] = 1
+#         data_status["details"] = l
+#         data_status["results"] = "success"
+#         #print(data_status)
+          return jsonify(l)
     else:
         data_status["responseStatus"] = 0
         data_status["result"] = "Data not available"
