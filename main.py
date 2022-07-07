@@ -42,14 +42,12 @@ mycursor = dj.cursor()
 @application.route('/getschool', methods=['POST', 'GET'])
 def getschool():
     global data_status
-    if dj:
-        print("yes")
-    else:
-        print("no")
     global mycursor
     if request.method == 'GET':
         data_status = {"responseStatus": 0, "results": ""}
+        print("qwerty")
         mycursor.execute("select * from temporary_school")
+        print("poiuyt")
         ab = mycursor.fetchall()
         l = []
         for i in ab:
@@ -67,7 +65,7 @@ def getschool():
         data_status["responseStatus"] = 1
         data_status["details"] = l
         data_status["results"] = "success"
-        print(data_status)
+        #print(data_status)
         return jsonify(l)
     else:
         data_status["responseStatus"] = 0
