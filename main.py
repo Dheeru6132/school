@@ -59,9 +59,9 @@ def getschool():
 #             dic["reason"] = i[2]
 #             dic["mobile"] = i[3]
 #             dic["date"] = i[4]
-#             ti = (datetime.min + i[5]).time()
-#             json_str = json.dumps({'created_at': ti}, default=str)
-#             dic["time"] = json_str
+#             ti = (datetime.min + i[5]).time() no need
+#             json_str = json.dumps({'created_at': ti}, default=str) no need
+#             dic["time"] = json_str no need
 #             l.append(dic)
 #         data_status["responseStatus"] = 1
 #         data_status["details"] = l
