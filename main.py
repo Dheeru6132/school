@@ -67,7 +67,7 @@ def getschool():
 #         data_status["details"] = l
 #         data_status["results"] = "success"
 #         #print(data_status)
-          return jsonify(l)
+        return jsonify(l)
     else:
         data_status["responseStatus"] = 0
         data_status["result"] = "Data not available"
