@@ -25,7 +25,7 @@ def forschool():
         lastname = request.json['lastname']
         reason = request.json['reason']
         mobile = request.json['mobile']
-        datetime = datetime.now()
+        datetime = datetime.datetime.now()
         mycursor.execute("insert into for_school values(%s,%s,%s,%s,%s)",(firstname, lastname, reason, mobile, datetime))
         dj.commit()
         mycursor.close()
