@@ -46,9 +46,10 @@ def getschool():
     if request.method == 'GET':
         data_status = {"responseStatus": 0, "results": ""}
         print("qwerty")
-        mycursor.execute("select * from sys.temporary_school")
+        mycursor.execute("select firstname,lastname from sys.temporary_school")
         print("poiuyt")
         ab = mycursor.fetchall()
+        print(ab)
         l = []
         for i in ab:
             dic = {}
