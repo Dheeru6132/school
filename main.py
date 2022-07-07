@@ -42,6 +42,10 @@ mycursor = dj.cursor()
 @application.route('/getschool', methods=['POST', 'GET'])
 def getschool():
     global data_status
+    if dj:
+        print("yes")
+    else:
+        print("no")
     global mycursor
     if request.method == 'GET':
         data_status = {"responseStatus": 0, "results": ""}
