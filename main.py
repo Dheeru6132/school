@@ -46,8 +46,7 @@ def getschool():
         data_status = {"responseStatus": 0, "results": ""}
         mycursor.execute("select * from sys.for_school")
         ab = mycursor.fetchall()
-        print(ab)
-        l = [1,2]
+        l = []
         for i in ab:
             dic = {}
             #for j in i:
