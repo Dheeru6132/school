@@ -27,6 +27,7 @@ def forschool():
         reason = request.json['reason']
         mobile = request.json['mobile']
         dc = datetime.now()
+        dc = str(dc)
         mycursor.execute("insert into temporary_school values(%s,%s,%s,%s,%s)",(firstname, lastname, reason, mobile, dc))
         dj.commit()
         #mycursor.close()
