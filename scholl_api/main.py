@@ -27,7 +27,7 @@ def forschool():
         reason = request.json['reason']
         mobile = request.json['mobile']
         dc = datetime.now()
-        mycursor.execute("insert into for_school values(%s,%s,%s,%s,%s)",(firstname, lastname, reason, mobile, dc))
+        mycursor.execute("insert into temporary_school values(%s,%s,%s,%s,%s)",(firstname, lastname, reason, mobile, dc))
         dj.commit()
         #mycursor.close()
         data_status["responseStatus"] = 1
@@ -45,7 +45,7 @@ def getschool():
     global mycursor
     if request.method == 'GET':
         data_status = {"responseStatus": 0, "results": ""}
-        mycursor.execute("select * from sys.for_school")
+        mycursor.execute("select * from sys.temporary_school")
         ab = mycursor.fetchall()
         l = []
         for i in ab:
