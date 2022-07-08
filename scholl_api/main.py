@@ -4,6 +4,9 @@ from datetime import datetime, date, time
 from flask import Markup
 from json import dumps
 import json
+import pytz
+
+UTC = pytz.utc
 
 application = Flask(__name__)
 
@@ -26,9 +29,9 @@ def forschool():
         lastname = request.json['lastname']
         reason = request.json['reason']
         mobile = request.json['mobile']
-        dc = datetime.now()
-        dc = str(dc)
-        print(dc,type(dc))
+        #dc = datetime.now()
+        IST = pytz.timezone('Asia/Kolkata')
+        dc = datetime.now(IST)
         mycursor.execute("insert into temporary_school values(%s,%s,%s,%s,%s)",(firstname, lastname, reason, mobile, dc))
         dj.commit()
         #mycursor.close()
