@@ -50,7 +50,7 @@ def getschool():
     global mycursor
     if request.method == 'GET':
         data_status = {"responseStatus": 0, "results": ""}
-        mycursor.execute("select * from sys.temporary_school")
+        mycursor.execute("select * from temporary_school")
         ab = mycursor.fetchall()
         l = []
         for i in ab:
