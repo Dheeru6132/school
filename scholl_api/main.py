@@ -65,7 +65,7 @@ def getschool():
         data_status["responseStatus"] = 1
         data_status["details"] = l
         data_status["results"] = "success"
-        #print(data_status)
+        print(l)
         #return jsonify(l)
         # l= Markup("<h1>Voila! Platform is ready to used</h1>")
         #
