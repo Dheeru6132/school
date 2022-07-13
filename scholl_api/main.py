@@ -32,7 +32,7 @@ def forschool():
         #dc = datetime.now()
         IST = pytz.timezone('Asia/Kolkata')
         dc = datetime.now(IST)
-        mycursor.execute("insert into temporary_school values(%s,%s,%s,%s,%s)",(firstname, lastname, reason, mobile, dc))
+        mycursor.execute("insert into school values(%s,%s,%s,%s,%s)",(firstname, lastname, reason, mobile, dc))
         dj.commit()
         #mycursor.close()
         data_status["responseStatus"] = 1
@@ -50,7 +50,7 @@ def getschool():
     global mycursor
     if request.method == 'GET':
         data_status = {"responseStatus": 0, "results": ""}
-        mycursor.execute("select * from temporary_school")
+        mycursor.execute("select * from school")
         ab = mycursor.fetchall()
         l = []
         for i in ab:
